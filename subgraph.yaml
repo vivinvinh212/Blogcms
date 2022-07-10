@@ -1,4 +1,7 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
+features:
+  - fullTextSearch
+  - ipfsOnEthereumContracts
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,13 +11,13 @@ dataSources:
     source:
       address: "0xb3EF97d369a6a1Ca69f525916557d58653A07bE8"
       abi: Blog
+      startBlock: 27114420
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - PostCreated
-        - PostUpdated
+        - Post
       abis:
         - name: Blog
           file: ./abis/Blog.json
